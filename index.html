@@ -1,31 +1,228 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test GitHub Pages</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Bleu clair */
-            text-align: center;
-            padding: 50px;
-        }
-        .container {
-            background-color: #2c3e50; /* Bleu foncé */
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 50%;
-            margin: auto;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press Release AI Triaging</title>
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f8fc;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    /* Search Input */
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    /* Table Styles */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+    th span {
+      margin-left: 5px;
+      font-size: 0.8em;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Page de test GitHub</h1>
-        <p>Bienvenue sur votre première page hébergée via GitHub Pages.</p>
-        <p>Modifiez ce fichier pour voir les changements en temps réel.</p>
-    </div>
+  <h1>Press Release AI Triaging</h1>
+  <!-- Search input -->
+  <input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for any text...">
+  
+  <!-- Example table -->
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Date Received<span>&#x25B2;</span></th>
+        <th onclick="sortTable(1)">Press Release<span>&#x25B2;</span></th>
+		<th onclick="sortTable(2)">Newsworthy score<span>&#x25B2;</span></th>
+		<th onclick="sortTable(6)">Press Release Summary<span>&#x25B2;</span></th>
+		<th onclick="sortTable(3)">Score Reasoning<span>&#x25B2;</span></th>
+        <th onclick="sortTable(4)">Press Release Issuer<span>&#x25B2;</span></th>
+		<th onclick="sortTable(5)">Press Release Industry<span>&#x25B2;</span></th>
+		<th onclick="sortTable(7)">User Feedback<span>&#x25B2;</span></th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2025-04-01</td>
+        <td><strong>
+			<a href="https://www.vd.ch/actualites/communiques-de-presse-de-letat-de-vaud/detail/communique/le-conseil-detat-franchit-une-nouvelle-etape-en-matiere-de-politique-climatique#:~:text=Le%20Conseil%20d%E2%80%99%C3%89tat%20poursuit%20son,se%20mobiliser%20pour%20le%20climat" target="_blank" title="PR 1">PR 1</a></strong>
+</td>
+        <td><strong>90%</strong></td>
+        <td>The Council of State of Vaud launches its second-generation Climate Plan, committing to carbon neutrality by 2050 with over 80 targeted measures.</td>
+		<td>This press release is highly newsworthy as it outlines a major policy milestone—the adoption of the second-generation Climate Plan by the Vaud Council of State—with specific goals (carbon neutrality by 2050), concrete measures (80+ actions across sectors), multiple factual data points, and clear relevance to the Swiss public; it also includes strong structural elements like a headline, dateline, and contact details.</td>
+        <td>État de Vaud (Canton of Vaud)</td>
+		<td>Public Sector / Environmental Policy & Sustainability</td>
+        <td>Newsworthy</td>
+      </tr>
+
+      <tr>
+        <td>2025-04-02</td>
+        <td><strong>
+			<a href="https://regiondenyon.ch/2025/03/27/la-region-de-nyon-recompense-une-societe-proposant-une-technologie-a-la-pointe-pour-ameliorer-la-connectivite-en-milieu-ferme/#:~:text=Le%20Prix%20%C3%A0%20l%E2%80%99innovation%202025,du%20Fonds%20r%C3%A9gional%20%C3%A0%20l%E2%80%99innovation" target="_blank" title="PR 2">PR 2</a></strong>
+		</td>
+        <td>
+			<strong>85%</strong>
+		</td>
+		<td>The Région de Nyon has awarded its 2025 Innovation Prize to Nu Glass, a Nyon-based company, for developing a laser treatment for windows that enhances indoor mobile connectivity without consuming electricity. Additionally, the jury's "coup de cœur" recognition was given to Toitvert.ch for its local, sustainable green roofing solutions.</td>
+        <td>
+			The press release provides a detailed account of a local company's innovative technology, includes verifiable data points, and maintains a factual tone with minimal promotional language. Its relevance to the Nyon region and the inclusion of essential structural elements enhance its newsworthiness.
+		</td>
+        <td>Région de Nyon</td>
+        <td>Technology and Telecommunications</td>
+        <td>Newsworthy</td>
+      </tr>
+
+
+      <tr>
+        <td>2025-03-31</td>
+        <td><strong>
+			<a href="https://observatoire.vaud.ch/2022/09/myvaud-ch-un-site-dexception/#:~:text=Apr%C3%A8s%20plusieurs%20mois%20de%20conception%2C,Responsable%20digital%20de%20Vaud%20Promotion" target="_blank" title="PR 3">PR 3</a></strong>
+		</td>
+        <td>
+			<strong>65%</strong>
+		</td>
+		<td>
+			In September 2022, Vaud Promotion announced the launch of MyVaud.ch, a new digital platform designed to enhance the tourism experience in the Vaud region. The website offers personalized recommendations, interactive maps, and up-to-date information on local attractions, aiming to provide both residents and visitors with a comprehensive guide to the area's offerings. The initiative reflects Vaud Promotion's commitment to leveraging digital innovation to boost regional tourism.
+		</td>
+        <td>
+			The press release is well-structured, includes essential elements such as a headline, dateline, contact information, and quotes, and provides factual data points regarding the launch of MyVaud.ch. However, the release dates back to September 2022, which diminishes its current relevance and timeliness.
+		</td>
+        <td>Vaud Promotion</td>
+        <td>Tourism and Digital Services</td>
+        <td>Not Newsworthy</td>
+      </tr>
+
+
+      <tr>
+        <td>2025-03-31</td>
+        <td><strong>
+			<a href="https://www.presseportal.ch/fr/pm/100062485/100899383#:~:text=d%C3%A9fis.%20La%20start,aussi%20%C3%A0%20la%20Suisse%20romande" target="_blank" title="PR 4">PR 4</a></strong>
+		</td>
+        <td>
+			<strong>75%</strong>
+		</td>
+		<td>
+			In November 2022, Selma Finance, a Swiss digital investment startup, announced its expansion into the Romandie region following a successful launch in German-speaking Switzerland. The company offers a digital wealth management application that provides cost-effective investment solutions, aiming to address the evolving demands of the Swiss financial industry. 
+		</td>
+        <td>
+			The press release is well-structured, includes essential elements such as a headline, dateline, and contact information, and provides factual data points regarding Selma Finance's expansion into the Romandie region. However, the release dates back to November 2022, which diminishes its current relevance and timeliness.
+		</td>
+        <td>Selma Finance</td>
+        <td>Financial Technology (FinTech)</td>
+        <td>Not Newsworthy</td>
+      </tr>
+
+
+    </tbody>
+  </table>
+
+  <script>
+    // Track sort direction for each column (true = ascending, false = descending)
+    var sortDirections = [true, true, true];
+
+    // Function to sort the table based on column index n
+    function sortTable(n) {
+      var table = document.getElementById("myTable");
+      var tbody = table.tBodies[0];
+      var rows = Array.from(tbody.rows);
+      var dir = sortDirections[n] ? "asc" : "desc";
+
+      // Sort rows based on cell value (numeric if possible; else text)
+      rows.sort(function(a, b) {
+        var x = a.cells[n].textContent.trim();
+        var y = b.cells[n].textContent.trim();
+        var xNum = parseFloat(x);
+        var yNum = parseFloat(y);
+
+        // If both are numbers, compare numerically
+        if (!isNaN(xNum) && !isNaN(yNum)) {
+          return dir === "asc" ? xNum - yNum : yNum - xNum;
+        }
+        // Otherwise, compare as strings (case-insensitive)
+        if (x.toLowerCase() > y.toLowerCase()) {
+          return dir === "asc" ? 1 : -1;
+        }
+        if (x.toLowerCase() < y.toLowerCase()) {
+          return dir === "asc" ? -1 : 1;
+        }
+        return 0;
+      });
+
+      // Append sorted rows back to tbody
+      rows.forEach(function(row) {
+        tbody.appendChild(row);
+      });
+
+      // Toggle sort direction for next click
+      sortDirections[n] = !sortDirections[n];
+
+      // Update sort arrow in header cells
+      var headers = table.tHead.getElementsByTagName("th");
+      for (var i = 0; i < headers.length; i++) {
+        if (i === n) {
+          headers[i].innerHTML = headers[i].innerHTML.replace(/[\u25B2\u25BC]/g, "") + 
+            (sortDirections[n] ? " <span>&#x25B2;</span>" : " <span>&#x25BC;</span>");
+        } else {
+          // Optionally reset arrows on other headers to default (ascending)
+          headers[i].innerHTML = headers[i].innerHTML.replace(/[\u25B2\u25BC]/g, "") + " <span>&#x25B2;</span>";
+        }
+      }
+    }
+
+    // Function to filter table rows based on search input
+    function searchTable() {
+      var input = document.getElementById("searchInput");
+      var filter = input.value.toUpperCase();
+      var table = document.getElementById("myTable");
+      var tr = table.getElementsByTagName("tr");
+
+      // Loop through table rows (skip header row)
+      for (var i = 1; i < tr.length; i++) {
+        var rowVisible = false;
+        var tds = tr[i].getElementsByTagName("td");
+        // Check each cell in the row for a match
+        for (var j = 0; j < tds.length; j++) {
+          var txtValue = tds[j].textContent || tds[j].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            rowVisible = true;
+            break;
+          }
+        }
+        tr[i].style.display = rowVisible ? "" : "none";
+      }
+    }
+  </script>
 </body>
 </html>

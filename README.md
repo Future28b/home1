@@ -1,1 +1,1 @@
-Test ETRi
+Test ETRi for today
